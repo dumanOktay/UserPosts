@@ -1,0 +1,15 @@
+appId: com.duman.userposts
+---
+- launchApp
+- tapOn:
+      id: "com.duman.userposts:id/user_card"
+      index: 0
+- back
+- tapOn:
+        id: "com.duman.userposts:id/user_card"
+        index: 3
+- back
+- tapOn:
+      id: "com.duman.userposts:id/user_card"
+      index: 2
+- back
