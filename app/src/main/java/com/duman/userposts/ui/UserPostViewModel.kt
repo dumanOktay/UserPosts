@@ -6,7 +6,6 @@ import com.duman.userposts.data.model.ApiResult
 import com.duman.userposts.data.model.UserDataUiModel
 import com.duman.userposts.data.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -31,7 +30,6 @@ class UserPostViewModel @Inject constructor(
     private fun getUserList() {
         viewModelScope.launch {
             _resultFlow.emit(ApiResult.Loading)
-            delay(3000)
             userRepository.getUserDetailList().onEach {
                 _resultFlow.emit(it)
             }.launchIn(this)
